@@ -1,0 +1,907 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel="icon" type="image/png" sizes="32x32" href='https://dinhnd.thuctap.inevn.com/TT7_2/img/logo.isij'>-->
+    <title>Khoa tiếng Hàn Quốc | Đại học Hà Nội</title>
+    <link rel="icon" type="image/png" sizes="32x32" href='https://i0.connections.vn/cdn.inevn.com/img/thumb/213433.500x.isij?resize=201,206&quality=100&strip=all'>
+    <style>
+        .bgc5{background-color: hsla(0, 0%, 100%, .18);}
+        .bgc96{background-color: #931536 !important;}
+        .c85{color: #8c0025 !important;}
+        #hỗTrợTrựcTuyến { color: white; background-color: brown;}
+        .tánGẫu { background-color: brown; }
+        .sticky {position: fixed; top: 0 !important; left: 0;transition: 0.3s !important; width: 100%; color:#fff; background-color: #931536; padding-top: 15px; padding-bottom: 15px; z-index: 5;}
+        .ffmt {font-family: Montserrat,Tahoma;}
+        .logo{background-image: url('images/kr-logo.jpg');}
+        .bg0o{background-color: rgba(255, 255, 255, 0.7);}
+        .clr1{color: #8c0025;}
+        .clr2{color: #a0181a;}
+        .bgl{background-color: #e8dbdb;}
+        /*.thongbao:first-child{background-color: #8c0025;}*/
+        .copy{border-right: 2px solid #fff;}
+        .active{background-color: #931536; color: #fff;}
+    </style>
+    <script src='https://cdn.inevn.com/js/jquery.main.isj'></script>
+    <script src='https://cdn.inevn.com/js/include.core.isj'></script>
+    <script type="text/javascript">
+        var chưaCóCache = true,
+                data = {
+                    ụTổng:10747, // ID chuyên mục tổng của website
+
+                    linkKhác:{ // Đổi url theo id đường dẫn
+                        0:'/',
+                    },
+                    tênKhác:{ // Đổi tên hiển thị theo id đường dẫn
+                        0:"Trang chủ",
+                    },
+                };
+                $(function(){
+                    tảiTrước({
+                        dữLiệu:{ // Sử dụng package riêng
+                        js:["package.hanu"],
+                        css:["package.all"]
+                        },
+                        biểuTượng:"https://cdn.inevn.com/img/other/hanu.png", // "/img/khaothi_img/kt_logokhoa.jpg",
+                        chờ:1067, //tạo độ trễ khi vào xem nội dung (đảm bảo nội dung render đầy đủ)
+                        koChe:false, //không hiển thị
+                        màuNền: "#8c0025", //Màu nền chờ
+                        riêng:true, // Tải theo thư viện khác
+                        cache:true, // Được sử dụng cache của hệ thống (Package, tải dữ liệu...)
+                        xong:function(){
+                            var logo = "https://i0.connections.vn/cdn.inevn.com/img/thumb/213433.500x.isij?resize=201,206&quality=100&strip=all",
+                                menu1 = [10748,10749, 10760, 10855,10761, 10762, 10763,10764, 10765],//['10719', '10720', '10721', '10722', '10723', '10724', '10725'],
+                                gioithieu = 10748,
+                                tintuc = 10749,
+                                thongbao = 10760,
+                                nckh = 10855,
+                                daotao = 10761,
+                                hoptac = 10762,
+                                ngoaikhoa = 10763,
+                                thutuc = 10764,
+                                hanviet = 10765,
+                                ụTổng = data.ụTổng,
+                                cuocsong= 10872,
+                                linkKhác = data.linkKhác||[],
+                                tênKhác = data.tênKhác||{},
+                                uTB =[10823,10824,10825,10826] ,
+                                H = $(".wrap"), // Thẻ chứa toàn bộ DOM website
+                                thân; //  = $("#nộiDungXem"); // thẻ chứa nội dung body thay đổi
+                            //chat
+                            tánGẫu.khởiTạo(true, {
+                                tàiKhoản: [
+                                    { ê: "Định", ô: "", à: "127453", i: "school::fs2,cod" },
+                                    { ê: "Hoàng Anh", ô: "Gầy", à: "127456", i: "assignment::fs25,cod" },
+                                    { ê: "Nam", ô: "Gầy", à: "127454", i: "build::fs2,cod" },
+                                    { ê: "Huyền", ô: "Gầy", à: "127755", i: "book::fs2,cod" }
+                                ], chào: "Tôi có thể giúp gì cho bạn?",
+                            });
+                                CẦN.js(["https://thuctap.inevn.com/nguyendinhhuy/js/function.min.js", "https://thuctap.inevn.com/nguyendinhhuy/CauHinhWeb/js/include.min.js?=123"], true, function(){
+                                    CẦN.db(["chuyênMục."+ụTổng,"chuyênLực."+ụTổng], function(){
+                                    // Lấy tất cả chuyên mục trên webiste
+                                    var chuyênMụcs = khôngGian.chuyênMục.sau(ụTổng)||[];// Tất cả chuyên mục thuộc website;
+                                    // Cấu trúc giao diện chính của website
+                                    H.empty().append(
+                                        //đầu
+                                        
+                                        $("<div>", {class:"head w1 pr"}).empty().append(
+                                            $("<div>", {class:"p pa l0 t0 z5 w1", style:"background-color:rgba(120, 0, 0, 0.5);"}).append(
+                                                $("<div>" ,{class:"container df fdr"}).append(
+                                                    $("<div>", {class:"df aic w5"}).append(
+                                                        $("<div>", {class:"logo bgrn bgso bgpc pb1 w1 bấmĐc", style:"background-image: url('https://namlh.thuctap.inevn.com/TT6/images/kr-logo.jpg');"})
+                                                    ),
+                                                    $("<div>", {class:"rigthH w1 df fdc"}).append(
+                                                        $("<div>", {class:"w1 df fdc"}).append(
+                                                        $("<div>", {class:"name w1 df aic fdr jcfe cf"}).append(
+                                                            $("<div>", {class:"df aic jcsb fdr w80 plr10" ,style:"background-color: #8c0025;"}).append(
+                                                                $("<div>", {class:"fs12 bấmĐc"}).append(
+                                                                    $("<a>",{class:"fs07 fwb ptb5", html:"TRƯỜNG ĐẠI HỌC HÀ NỘI <br>", href:"https://www.hanu.vn/"}),
+                                                                    $("<a>",{class:"pb5 fs11 fwb",html:"KHOA TIẾNG HÀN QUỐC", href:"#"})
+                                                                ),
+                                                                $("<div>",{class:"search w20 h25 bra25 oxh oyh df fdr bgcf"}).append(
+                                                                    $("<input>", {class:"ôTìmkiếm w1 h1 bn on", placeholder:"Tìm kiếm"}),
+                                                                    $("<o>", {class:"iIcon ffi usn bra3 tac fsn O fs18 c0 bấmĐc",text:"search"}),
+                                                                )
+                                                            ),
+                                                            $("<div>", {class:"df aic jcsc fdc w15"}).append(
+                                                                $("<div>", {class:"country df aic jcfe fdr w1 bấmĐc"}).append(
+                                                                    $("<div>", {class:"vn bgrn bgso bgpc w20 ", style:"background-image: url('https://namlh.thuctap.inevn.com/TT6/images/vn-flag.jpg'); padding-bottom: 12% ;"}),
+                                                                    $("<div>", {class:"kr bgrn bgso bgpc w20 ", style:"background-image: url('https://namlh.thuctap.inevn.com/TT6/images/kr-flag.png'); padding-bottom: 12% ;"})
+                                                                ),
+                                                                $("<div>", {class:"acc df aci jcfe fdr w1 fs09 cy"}).append(
+                                                                        $("<div>", {class:"sigin df fdr"}).append(
+                                                                            $("<p>", {class:"ptb5 fs11 fs06-xs bấmĐc", text:"ĐĂNG NHẬP"}),
+                                                                            $("<o>", {class:"iIcon ffi fs2 bấmĐc",text:"person"}),
+                                                                        )
+                                                                    )
+                                                                )
+                                                            ),
+                                                        $("<div>", {class:"navbar w1 df jcsb fdr cf fwb fs07 fs06-xs"}).append(
+                                                                menu1.map(function(á,à){
+                                                                    return  $("<a>", {class:"ptb10 plr5 tduh",href:dữLiệu.url(á, "ụ"), text: dữLiệu.tên(á, "ụ")})
+                                                                })
+                                                            ) 
+                                                        )
+                                                    )
+                                                )
+                                            ), 
+                                        ),                 
+                                    
+                                        // Thân
+                                        thân = $("<div>", {class:"thân"}).append(
+                                            
+                                        ),
+                                        // Chân
+                                    $("<div>", {class:"chân col-md-12 bgrn bgsc bgpc cf", style:"background-image: url('https://namlh.thuctap.inevn.com/TT6/images/kr_footer22.png');padding-bottom: 3%;"}).append(
+                                            $("<div>",{class:"container ptb10 fs14p"}).append(
+                                                $("<div>",{class:"topC w1 df aic jcsc fdc",style:"border-bottom: 1px solid #fff;"}).append(
+                                                    $("<div>",{class:"content w1 df aic jcsb fww"}).append(
+                                                        $("<div>",{class:"con1 pa10 df fdc col-md-6 col-xs-12"}).append(
+                                                            $("<div>",{class:"title fs15 mtb15 ffr fwb"}).append(
+                                                                $("<p>", {class:"ptb5 plr10", text:"LIÊN HỆ"})
+                                                            ),
+                                                            $("<div>",{class:"pa5 fwb "}).append(
+                                                                $("<div>",{class:"ptb5 plr10", text:"Địa chỉ: Phòng 301 - Nhà C, Trường Đại học Hà Nội, Km 9 Nguyễn Trãi, Nam Từ Liêm, Hà Nội, Việt Nam"}),
+                                                                $("<div>",{class:"ptb5 plr10", text:"Điện thoại: (024).355.419.38"}),
+                                                                $("<div>",{class:"ptb5 plr10", text:"Email: kr@hanu.edu.vn"})
+                                                            )
+                                                        ),
+                                                        $("<div>",{class:"con2 pa10 df fdc col-md-4 col-xs-12"}).append(
+                                                            $("<div>",{class:"title fs15 mtb15 ffr fwb w1 tac"}).append(
+                                                                $("<p>",{class:"ptb5 plr10", text:"NỘI DUNG CHÍNH"})
+                                                            ),
+                                                            $("<div>",{class:"pa5 df fdr w1"}).append(
+                                                                $("<div>",{class:"pa5 df fdc w50"}).append(
+                                                                    $("<a>",{class:"ptb5 plr10 tduh",href:dữLiệu.url(gioithieu,"ụ"),text:"Giới thiệu"}),
+                                                                    $("<a>",{class:"ptb5 plr10 tduh",href:dữLiệu.url(tintuc,"ụ"),text:"Tin tức - sự kiện"}),
+                                                                    $("<a>",{class:"ptb5 plr10 tduh",href:dữLiệu.url(thongbao,"ụ"),text:"Thông báo"}),
+                                                                    $("<a>",{class:"ptb5 plr10 tduh",href:dữLiệu.url(daotao,"ụ"),text:"Đào tạo"})
+                                                                ),
+                                                                $("<div>",{class:"pa5 df fdc w50"}).append(
+                                                                    $("<a>",{class:"ptb5 plr10 tduh",href:dữLiệu.url(nckh,"ụ"),text:"Nghiên cứu khoa học"}),
+                                                                    $("<a>",{class:"ptb5 plr10 tduh",href:dữLiệu.url(hoptac,"ụ"),text:"Hợp tác quốc tế"}),
+                                                                    $("<a>",{class:"ptb5 plr10 tduh",href:dữLiệu.url(ngoaikhoa,"ụ"),text:"Hoạt động ngoại khóa"})
+                                                                )   
+                                                            )
+                                                        )
+                                                    ),
+                                                    $("<div>",{class:"col-md-4 ptb10"}).append(
+                                                        $("<div>",{class:"w20 df aic jcsc mlra"}).append(
+                                                            $("<div>",{class:"logo bgrn bgso bgpc w1 pb1 mlra", style:"background-image: url('https://namlh.thuctap.inevn.com/TT6/images/kr-logo.jpg');"})
+                                                        ),
+                                                        $("<div>",{class:"name w1 fwb lh12"}).append(
+                                                            $("<div>",{class:"tac pa5 w1"}).append(
+                                                                $("<a>",{class:"ptb5 plr10 fs12 w1 fwb bấmĐc", html:"TRƯỜNG ĐẠI HỌC HÀ NỘI <br>", href:"https://www.hanu.vn/"}),
+                                                                $("<a>",{class:"ptb5 plr10 fs15 w1 fwb bấmĐc", html:"KHOA TIẾNG HÀN QUỐC", href:"#"})
+                                                            )
+                                                        )
+                                                    )
+                                                ),
+                                                $("<div>",{class:"botC w1 pt15"}).append(
+                                                    $("<div>",{class:"w1 tac df fdr jcsc"}).append(
+                                                        $("<p>",{class:"copy plr5 ", text:"Copyright © 2021 - Trường Đại học Hà Nội. All Rights Reserved"}),
+                                                        $("<a>",{class:"plr5 cfh shineh tduh bấmĐc",href:"https://ine.vn/", text:"Powered by I&E Corp."})
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    );
+
+                                        // Tạo giao diện trang chủ
+                                        var trangChủ = function(){
+                                        thân.empty().append(
+                                            $("<div>",{class:"slide w1 pb249 bgrn bgsc bgpc pr z10 df bấmĐc" }).css({"background-image": "url('https://namlh.thuctap.inevn.com/TT6/images/banner.jpg')"}).append(
+                                                $("<div>", {class:"midB pa w50 df aic jcsc fdc fs15p col-xs-0"}).css({'left': '25%','top':'40%', 'background-color': 'rgb(255, 255, 255,0.5)','color':'#8c0025'}).append(
+                                                    $("<div>", {class:"fs18 ptb15 plr5"}).append(
+                                                        $("<h1>", {class:"tac", text:"KHOA TIẾNG HÀN QUỐC"})
+                                                    ),
+                                                    $("<div>", {class:"sub fs14 fwb pa15" ,style:"border-top: 2px solid #8c0025;"}).append(
+                                                        $("<p>", {class:"", text:"딘 잘생겼다"})
+                                                    )
+                                                )
+                                            ),
+                                            $("<div>",{class:"container mtb15 ls0"}).append(
+                                            $("<div>", {class:"since col-md-7 df fdc"}).append(
+                                                    //$("<div>", {class:"title w1 df"}),
+                                                    //$("<div>", {class:"nD df fdc fs13"}),
+                                                    //$("<a>", {class:"ptb5 plr10 fs15 fwb clr1 ffr", href:dữLiệu.url(menu1[0],"ụ"), style:"border-bottom: 1px solid #8c0025;",text: "SINCE 2000"}),
+                                                        
+                                                        /*$("<div>", {class:"nD df fdc fs13"}).append(
+                                                        
+                                                        )*/
+                                                
+                                            ),
+                                            $("<div>", {class:"images col-md-5 col-xs-12 df jcsc plr5"}).append(
+                                                $("<div>", {class:"col-md-7 col-xs-5"}).append(
+                                                        $("<div>",{class:"bgrn bgsc bgpc w1 pb1"}).css({"background-image": "url('https://namlh.thuctap.inevn.com/TT6/images/kr_since1.png')"}),
+                                                    ),
+                                                $("<div>", {class:"col-md-5 col-xs-4 df fdc"}).append(
+                                                    $("<div>",{class:"col-md-12"}).append(
+                                                        $("<div>",{class:"bgrn bgso bgpc w80 h25 pb43"}).css({"background-image": "url('https://namlh.thuctap.inevn.com/TT6/images/kr_since1.png')", "transform": "translate(20px, -10px)"}),
+                                                    ),
+                                                    $("<div>",{class:"col-md-9 col-xs-7"}).append(
+                                                        $("<div>",{class:"bgrn bgso bgpc w80 h25 pb43"}).css({"background-image": "url('https://namlh.thuctap.inevn.com/TT6/images/kr_since1.png')","transform": "translate(15px)"}),
+                                                    ),
+                                                    $("<div>",{class:"col-md-7 col-xs-5"}).append(
+                                                        $("<div>",{class:"bgrn bgso bgpc w80 h25 pb43"}).css({"background-image": "url('https://namlh.thuctap.inevn.com/TT6/images/kr_since1.png')","transform": "translate(-35px,-5px)"}),
+                                                    ),
+                                                    $("<div>",{class:"col-md-5 col-xs-3"}).append(
+                                                        $("<div>",{class:"bgrn bgso bgpc w80 h25 pb43"}).css({"background-image": "url('https://namlh.thuctap.inevn.com/TT6/images/kr_since1.png')","transform": "translate(-100px ,-30px) "}),
+                                                    )
+                                                )
+                                            )
+                                        ),
+                                            $("<div>", {class:"soLieu w1 pr cf bgrn bgsc bgpc"}).css({"background-image": "url('https://namlh.thuctap.inevn.com/TT6/images/thanh.png')", "height": "150px" }).append(
+                                            $("<div>", {class:"container pr wh1 df"}).append(
+                                                $("<div>",{class:"chua w45 col-md-0 "}).css({"transform": "translate(0px, -220px)"}).append(
+                                                    $("<div>",{class:"image col-xs-0 col-md-12 bgrn bgso bgpc pb1"}).css({"background-image": "url('https://namlh.thuctap.inevn.com/TT6/images/kr_chua.png')"})
+                                                    ),
+                                                    $("<div>", {class:"h1 w80 col-xs-12 pr df fdc"}).append(
+                                                        $("<div>",{class:"w1 r0 t50 tt-50 df pa jcsc tac"}).append(
+                                                            $("<div>",{class:"cf vatc tac pa15 aic jcsb cf ml-15 mr-15 ptb15 fwb fs15 lh12 fs09-xs w1 pa5-xs"}).append(
+                                                                $("<div>",{class:"bsbb plr15 plr10-xs col-xs-4 col-md-4 h1 df fdc jcsc"}).append(
+                                                                    $("<div>",{class:"w1"}).append(
+                                                                        $("<div>", {class:"o w1"}).append(
+                                                                            $("<div>",{class:"tên ttu fs07 lh15 fs02-xs", html:" TRUYỀN THỐNG ĐÀO TẠO<br>TIẾNG HÀN QUỐC"}),
+                                                                            $("<div>",{class:"đếm ml0a fs16 fs12-xs", text:" 23+"})
+                                                                        )
+                                                                    )
+                                                                ),
+                                                                $("<div>",{class:"bsbb plr15 plr10-xs col-xs-4 col-md-4 h1 df fdc jcsc"}).append(
+                                                                    $("<div>",{class:"w1"}).append(
+                                                                        $("<div>", {class:"o w1"}).append(
+                                                                            $("<div>",{class:"tên ttu fs07 lh15 fs02-xs", html:"  SỐ LƯỢNG SINH VIÊN<br> ĐÃ ĐÀO TẠO"}),
+                                                                            $("<div>",{class:"đếm ml0a fs16 fs1-xs", text:"6000+"})
+                                                                        )
+                                                                    )
+                                                                ),
+                                                                $("<div>",{class:"bsbb plr15 plr10-xs col-xs-4 col-md-4 h1 df fdc jcsc"}).append(
+                                                                    $("<div>",{class:"w1"}).append(
+                                                                        $("<div>", {class:"o w1"}).append(
+                                                                            $("<div>",{class:"tên ttu fs07 lh15 fs02-xs", html:"  SỐ LƯỢNG SINH VIÊN RA TRƯỜNG<br>CÓ VIỆC LÀM"}),
+                                                                            $("<div>",{class:"đếm ml0a fs16 fs12-xs", text:"  98%"})
+                                                                        )
+                                                                    )
+                                                                )
+                                                            )
+                                                        )
+                                                    )
+                                                )
+                                            ),
+                                            
+                                            //tin tức sự kiện
+                                            $("<div>",{class:"container df fdc fs14p mt30 ls0"}).append(
+                                                $("<div>", {class:"wh1 df fs08 jcsc tac aic clr2 fs14p"}).append(
+                                                    $("<o>", {class:"iIcon ffi fli usn bra3 tac fs14", text:"double_arrow"}),
+                                                    $("<a>", {class:"fs12 fwb pa5 fs15 tduh", href:dữLiệu.url(tintuc,'ụ'), text:"TIN TỨC - SỰ KIỆN"})
+                                                ),
+                                                $("<div>", {class:"tintuc df fdr jcsc fww fs15-xs"}).append(
+                                                    $("<div>", {class:"bl1 df fdc col-md-4 cf col-xs-12",style:"order: 1"}).append(
+                                                        $("<div>",{class:"pr h50 mb10",id:"2"}).append(),
+                                                        $("<div>",{class:"pr h50 mb10", id:"1"}).append()
+                                                    ),
+                                                
+                                                    $("<div>", {class:"bl3 df fdc jcsb fs12 plr15 col-md-4 col-xs-12", style:"order: 2;"}).append(
+
+                                                        $("<a>",{class:"descsript pa5 w1 bấmĐc df fdc"}),
+                                                        $("<a>",{class:"con1 bgrn bgsc bgpc pb43 mb10 bấmĐc", href:"#",id:"0"})
+                                                    ),
+                                                    $("<div>", {class:"bl2 df fdc w30 cf col-md-4 col-xs-12", style:"order: 3"}).append(
+                                                        $("<div>",{class:"pr h50 mb10",id:"4"}).append(
+                                                            
+                                                        ),
+                                                        $("<div>",{class:"pr h50 mb10", id:"3"}).append(
+                                                            
+                                                        )
+                                                    ),
+                                                )
+                                            ),
+                                            
+                                            //thông báo
+                                            $("<div>",{class:"container df fdc aic fs14p ls0 mt30"}).append(
+                                                $("<div>", {class:"wh1 df fs08 jcsc tac aic clr2 fs14p"}).append(
+                                                    $("<o>", {class:"iIcon ffi fli  usn bra3  tac fs14", text:"double_arrow"}),
+                                                    $("<a>", {class:"fs12 fwb pa5 fs15 tduh", href:dữLiệu.url(thongbao,"ụ"), text:dữLiệu.tên(thongbao,"ụ")})
+                                                ),
+                                                $("<div>", {class:"tab col-md-11 mtb10 df aic fdc fwb bóng pb15 pr"}).append(
+                                                    $("<div>", {class:"pa b50 bgrn bgsc bgpc pb51 w25"}).css({"background-image":"url('https://namlh.thuctap.inevn.com/TT6/images/kr-back.jpg')","opacity": "0.3","left": "37%","top": "20%"}),
+                                                    $("<div>", {class:"anouce df fdr jcsb w1 tac fs11 mb10 bgl cf"}).append(
+                                                        uTB.map(function(á){
+                                                            return $("<div>", {class:"thongbao pa5 w25 bấmĐc clr2",id:á ,text:dữLiệu.tên(á,"ụ")})
+                                                        })
+                                                    ),
+                                                    $("<div>",{class:"news col-md-10 df fdc ha"}).append(
+                                                        $("<div>", {class:"w1 tb df fdc mb5 hmn2"}),
+                                                        $("<div>", {class:"linktb col-md-12 tac fwn fsi pa5"}) 
+                                                    )  
+                                                )
+                                            ),
+                                            
+                                            //đào tạo
+                                            $("<div>", {class:"back w1 mt15 bgrn bgsc bgpc"}).css({"background-image":"url('https://namlh.thuctap.inevn.com/TT6/images/kr-review.jpg')","padding-top": "5%"}).append(
+                                                $("<div>",{class:"wh1 bgsc bgrn"}).css({"background-image":"linear-gradient(rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 78.12%)"}).append(
+                                                    $("<div>",{class:"daotao container fs14p"}).append(
+                                                        $("<div>",{class:"wh1 df fs08 jcsc tac aic clr2 fs14p"}).append(
+                                                            $("<o>", {class:"iIcon ffi fli  usn bra3  tac fs14 mt5", text:"double_arrow"}),
+                                                            $("<a>",{class:"plr10 ptb5 fs15 fwb clr2 tduh", href: dữLiệu.url(daotao,"ụ"), text: dữLiệu.tên(daotao,"ụ")})
+                                                        ),
+                                                        $("<div>",{class:"he wh1 plr7 plr10-xs df mt10 jcsc tac"}).append(
+                                                            (config("chuyênLực."+daotao||[]).map(function(á,à){
+                                                                var anh = "background-image:url('https://namlh.thuctap.inevn.com/TT6/images/kr_he"+(à+1)+".png');"
+                                                                return $("<div>",{class:"col-xs-4 col-md-6 df fdc"}).append(
+                                                                    $("<div>",{class:"col-xs-12 col-md-8 mlra df fdc "}).append(
+                                                                        $("<div>",{class:"col-xs-6 col-md-7 mlra"}).append(
+                                                                            $("<a>", {class:"w1 pr df jcsc pb1 tfs11h trans2 mlra bra50", href: dữLiệu.url(á,"ụ")}).css({"background-color": "#a0181a;"}).append(
+                                                                                $("<div>", {class:"w50 pa pb31 tty t50 b0 mlra bgsc bgrn bgpc", style:anh})
+                                                                            )
+                                                                        ),
+                                                                        $("<div>",{class:"col-xs-12 mt10 pa b0"}).append(
+                                                                            $("<a>", {class:"col-xs-12 df tduh fdc jcsc tac fwb fs1 fs06-xs", href:dữLiệu.url(á,"ụ"), text: dữLiệu.tên(á,"ụ")})
+                                                                        )
+                                                                    )
+                                                                )
+                                                            }))
+                                                        )
+                                                    )
+                                                )
+                                            ),
+                                            
+                                            //nghiên cứu khoa học
+                                            $("<div>", {class:"col-xs-12 mt50"}).append(
+                                            $("<div>",{class:"wh1 container mt15 fs14p"}).append(
+                                                    $("<div>",{class:"wh1 df fs08 jcsc tac aic clr2 fs14p"}).append(
+                                                        $("<o>", {class:"iIcon ffi fli  usn bra3  tac fs14", text:"double_arrow"}),
+                                                        $("<a>",{class:"plr10 ptb5 fs15 fwb clr2 fs15 tduh", href:dữLiệu.url(nckh,"ụ"), text: dữLiệu.tên(nckh,"ụ")})
+                                                    ),
+                                                    $("<div>", {class:"w90 h1 mlra df mt25 mt15-xs jcsb fww tac"}).append(
+                                                        (config("chuyênLực."+nckh)||[]).map(function(á, à){
+                                                            var anhnckh = "background-image: url('https://namlh.thuctap.inevn.com/TT6/images/kr-nckh-"+(à+1)+".jpg');"
+                                                            return $("<div>",{class:"col-md-6 col-xs-12 plr15-xs  df fdc mt5 pr50"}).append(
+                                                                $("<div>", {class:"col-xs-12 pr pb32 mlra bgsc bgrn bgpc df jcsc", style:anhnckh}).append(
+                                                                    $("<div>", {class:"w80 bgcf pa b0 df  mb25 mb10-xs fdc bra10 jcsc"}).append(
+                                                                        $("<div>", {class:"w1 tac fs09 fs11-xs  fwb mtb10 c0 ttu"}).append(
+                                                                            $("<a>", {class:"ptb5 plr10 fs12 fs06-xs tduh", href: dữLiệu.url(á,"ụ"), text: dữLiệu.tên(á,"ụ")})
+                                                                        )
+                                                                    )
+                                                                )
+                                                            )
+                                                        })
+                                                    )
+                                                )
+                                            ),
+                                            
+                                            //Hợp tác
+                                            $("<div>", {class:"col-md-12 pr mt50 fs14p"}).append(
+                                                $("<div>", {class:"wh1 mt25 container"}).append(
+                                                    $("<div>", {class:"wh1 df fs08 jcsc tac aic clr2 fs14p"}).append(
+                                                        $("<o>", {class:"iIcon ffi fli  usn bra3  tac fs14", text:"double_arrow"}),
+                                                        $("<a>", {class:"ttu fftu tac fs15 tduh fwb wfc fs15", href: dữLiệu.url(hoptac, "ụ"), text: dữLiệu.tên(hoptac, "ụ")})
+                                                    ),
+                                                    $("<div>", {class:"tgv bgsc bgrn bgpc w5 pa l0" }).css({"background-image": "url('https://namlh.thuctap.inevn.com/TT6/images/kr_tgv1.png')","padding-bottom": "5%"}),
+                                                    $("<div>", {class:"chu bgso bgrn bgpc w5 pa l0 pb51 t50 col-xs-0" }).css({"background-image": "url('https://namlh.thuctap.inevn.com/TT6/images/kr_chuhq.png')"}),
+                                                    $("<div>", {class:"h1 w1 plr25 mlra df mt30 mt10-xs df jcsc fww tac"}).append(
+                                                        (config("chuyênLực."+hoptac)||[]).map(function(á, à){
+                                                            var anhhoptac = "background-image: url('https://namlh.thuctap.inevn.com/TT6/images/kr-hoptac-"+(à+1)+".jpg');"
+                                                            return $("<div>", {class:"col-md-3 col-xs-6 df fdc mlra "}).append(
+                                                                $("<div>", {class:"col-xs-12 df  mb5 bgrn jcsc bgsc bgpc mlra"}).css({"background-image": "url('https://namlh.thuctap.inevn.com/TT6/images/kr-back-hoptac.png')"}).append(
+                                                                    $("<div>", {class:"col-xs-8  df pr jcsc mlra"}).append(
+                                                                        $("<a>", {class:"w1 tfs11h trans2 pb1 bgsc bgrn bgpc bra50 nen1 pr", style:anhhoptac})
+                                                                    )
+                                                                ),
+                                                                $("<div>", {class:"col-xs-12 tac mt15 mt10-xs mlra fs11 fs08-xs fwb c0 ttu"}).append(
+                                                                    $("<a>", {class:"ptb5 plr10 tduh tac", href: dữLiệu.url(á, "ụ"), text: dữLiệu.tên(á,"ụ")})
+                                                                )
+                                                            )
+                                                        })
+                                                    )
+                                                )
+                                            ),
+                                            
+                                            //trung tâm văn hóa hàn việt
+                                            $("<div>", {class:"col-md-12 fs14p "}).append(
+                                                $("<div>", {class:"container mt50"}).append(
+                                                    $("<div>", {class:"wh1 df fs08 jcsc tac aic clr2 fs14p"}).append(
+                                                        $("<o>", {class:"iIcon ffi fli  usn bra3  tac fs14", text:"double_arrow"}),
+                                                        $("<a>", {class:"fwb ptb5 plr10 fs15 tduh", href:dữLiệu.url(hanviet,"ụ"), text:dữLiệu.tên(hanviet,"ụ")})
+                                                    ),
+                                                    $("<div>", {class:"df aic fdr w1 mt30"}).append(
+                                                    (config("chuyênLực."+hanviet)||[]).map(function(á,à){
+                                                        var anhhanviet = "background-image: url('https://namlh.thuctap.inevn.com/TT6/images/kr-tt-"+(à+1)+".jpg');"
+                                                        return $("<div>", {class:"col-xs-4 df aic fdc"}).append(
+                                                                $("<a>", {class:"col-md-8 col-xs-11 pb32 bóng mlra bgsc bgrn bgpc bra10 tfs11h trans2",style:anhhanviet}),
+                                                                $("<div>", {class:"mlra tac fs11 fs09-xs fwb mt15 c0 ttu"}).append(
+                                                                    $("<a>", {class:"mlra tac tduh", href:dữLiệu.url(á,"ụ"), text:dữLiệu.tên(á,"ụ")})
+                                                                )
+                                                            ) 
+                                                    }) 
+                                                    )
+                                                )
+                                            ),
+                                            
+                                            //hoạt động ngoại khóa
+                                            $("<div>", {class:"hoatdong col-md-12 pr mt50 fs14p"}).append(
+                                                $("<div>", {class:"wh1 df fs08 jcsc tac aic clr2 fs14p"}).append(
+                                                    $("<o>", {class:"iIcon ffi fli  usn bra3  tac fs14 mt5", text:"double_arrow"}),
+                                                    $("<a>", {class:"fwb ptb5 plr10 fs15 tduh", href:dữLiệu.url(ngoaikhoa,"ụ"), text:dữLiệu.tên(ngoaikhoa,"ụ")})
+                                                ),
+                                                $("<div>", {class:"hd df fdc w1"}).append(
+                                                    (config("chuyênLực."+ngoaikhoa)||[]).map(function(á,à){
+                                                        return $("<div>", {class:"w1 ptb50 pr",style:à%2!=0?"background: rgba(140, 26, 17, 0.08);":''}).append(
+                                                            $("<div>",{class:"container pb25 mtb50"}).append(
+                                                                $("<div>",{class:"col-md-12 mlra df fdr fww",  id: á})
+                                                            ),
+                                                            à%2!=0?$("<div>",{class:"pa b0 l0 hoa1 w10 col-xs-0"}).css({"height": "30%"}).append(
+                                                                $("<div>",{class:"pr w1 h1"}).append(
+                                                                    $("<div>",{class:"h1 w20 bgrn bgsp bgpc pa t0 "}).css({"background-image": "url('https://namlh.thuctap.inevn.com/TT6/images/kr_hoatren.png')", "left": "15px"}),
+                                                                    $("<div>",{class:"h1 w50 bgrn bgsp bgpc pa"}).css({"background-image": "url('https://namlh.thuctap.inevn.com/TT6/images/kr_hoadoto.png')", "top":"40px", "right": "15%"}),
+                                                                    $("<div>",{class:"h1 w20 bgrn bgsp bgpc pa t0 r0"}).css({"background-image": "url('https://namlh.thuctap.inevn.com/TT6/images/kr_hoatren.png')"}),
+                                                                    $("<div>",{class:"h1 w25 bgrn bgsp bgpc pa l0 "}).css({"background-image": "url('https://namlh.thuctap.inevn.com/TT6/images/kr_hoagoc.png')", "top": "30%" }),
+                                                                    $("<div>",{class:"h1 w25 bgrn bgsp bgpc pa"}).css({"background-image": "url('https://namlh.thuctap.inevn.com/TT6/images/kr_hoagoc.png')", "top": "35%", "right": "-10%"}),
+                                                                )
+                                                            ):ud,
+                                                            à%2!=0?$("<div>",{class:"line pa b0 r0 w80 col-xs-0"}).css({"height": "20%","left": "10%"}).append(
+                                                                $("<div>",{class:"pr w1 h1"}).css({"transform": "rotate(-1deg)"}).append(
+                                                                    $("<div>",{class:"bgrn bgso bgpc h1 w1 pa"}).css({"background-image": "url('https://namlh.thuctap.inevn.com/TT6/images/kr_linea2.png')"}),
+                                                                    $("<div>",{class:"bgrn bgso bgpc h1 w1 pa"}).css({"background-image": "url('https://namlh.thuctap.inevn.com/TT6/images/kr_linea2.png')" , "transform-origin": "bottom left", "transform": "rotate(0.5deg)"})
+                                                                )
+                                                            ):ud,
+                                                            à%2!=0?$("<div>",{class:"pa b0 r0 hoa1 w15 col-xs-0"}).css({"height": "40%"}).append(
+                                                                $("<div>",{class:"pr w1 h1"}).append(
+                                                                    $("<div>",{class:"h1 w20 bgrn bgsp bgpc pa t0 r0" }).css({"background-image": "url('https://namlh.thuctap.inevn.com/TT6/images/kr_blue1.png')"}),
+                                                                    $("<div>",{class:"h1 w50 bgrn bgsp bgpc pa"}).css({"background-image": "url('https://namlh.thuctap.inevn.com/TT6/images/kr_blue4.png' )", "top":"40px", "left": "35%"})
+                                                                )
+                                                            ):ud,
+                                                            à==0?$("<div>",{class:"pa b0 r0 bgrn bgpc bgsc w5"}).css({"background-image": "url('https://namlh.thuctap.inevn.com/TT6/images/kr_tgv2.png')", "padding-bottom":"5%"}):ud
+                                                        )
+                                                    })
+                                                )
+                                            ),
+                                            
+                                            //cuộc sống quanh ta
+                                            $("<div>", {class:"cuocsong col-md-12 fs14p ptb35", style:"background: rgba(140, 26, 17, 0.08);"}).append(
+                                                $("<div>",{class:"container df aife jcsc fdr fww"}).append(
+                                                    $("<div>", {class:"col-md-6 pr25 plr10 col-xs-12"}).append(
+                                                        $("<div>",{class:"wh1 df fs08 jcfs tac aic clr2 fs14p"}).append(
+                                                            $("<o>", {class:"iIcon ffi fli  usn bra3  tac fs14", text:"double_arrow"}),
+                                                            $("<a>",{class:"fwb ptb5 plr10 fs15 tduh", href:dữLiệu.url(cuocsong,"ụ"), text:"CUỘC SỐNG QUANH TA"})        
+                                                        ),
+                                                        $("<div>",{class:"csqt w1 col-xs-12 df aic jcsc fdr tac"}).append(
+                                                            /*$("<div>", {class:"col-md-6 mr5 pr bgrn bgpc bgsc pb31 cf fwb"}).append(
+                                                                $("<a>",{class:"pa b0 l0 tduh w1 ptb5 plr10 bgc05"})
+                                                            )*/
+                                                        ) 
+                                                    ),
+                                                    $("<div>",{class:"col-md-6 pr plr10 col-xs-12"}).append(
+                                                    $("<div>",{class:"vid w1 pr cf tac fwb", /*style:"background-image: url('https://namlh.thuctap.inevn.com/TT6/images/kr-title-vid.png');"*/})
+                                                        // $("<a>",{class:"pa b0 l0 tduh w1 ptb5 plr10 bgc05", href:"#",text:"Tiêu đề video"})
+                                                    )
+                                                )
+                                            )
+                                        ); 
+
+
+
+                                        //tải bài viết giới thiệu
+                                        xửLý("đốiTượng.tải.bàiViết", { d: { thuộcTính: { p: 1, ụ: [gioithieu, "~|"] }, giớiHạn: 1, sắpXếp: "ấ+" } }, { cache: true, onCached: true }, function (s) {
+                                            var s = s || [];
+                                        
+                                            CẦN.db(empty(s)?ud:'bàiViết.' + s, function (i) {
+                                                s.map(function(á){ 
+                                                    //cl(dữLiệu.môTả(á,"ộ"))
+                                                    $('.since').empty().append(
+                                                        $("<div>", {class:"title w1 df"}).append(
+                                                        $("<a>", {class:"ml10 ptb5 pr10 fs15 ffr fwb clr2", style:" border-bottom: 1px solid #8c0025;", href: dữLiệu.url(á,"ế"), text:"SINCE 2000"}),
+                                                            // <a class="ptb5 plr10 fs15 ffr fwb clr1" href="#" style=" border-bottom: 1px solid #8c0025;">SINCE 2000</a> 
+                                                        ),
+                                                        $("<div>", {class:"nD df fdc fs13 ptb5 plr10 fs09-xs", text:dữLiệu.môTả(á,"ế")}),
+                                                        $("<div>", {class:"df aic jcfs ptb5 plr10"}).append(
+                                                            $("<a>", {class:"clr1 fsi bấmĐc tduh", href: dữLiệu.url(á,"ế"), text:"Xem thêm",}),
+                                                        )
+                                                    )
+                                                })
+                                            })
+                                        });
+                                    
+                                        //tải bài viết tin tức - sự kiện
+                                        xửLý("đốiTượng.tải.bàiViết",{ d: { thuộcTính: { p: 1, ụ: [tintuc, "~|"] }, giớiHạn: 6, sắpXếp: "ấ+" } } , { cache: true, onCached: true, delay: 1000 }, function(s){
+                                        var s = s || [];
+                                        
+                                        CẦN.db(empty(s)?ud:'bàiViết.' + s, function (i) {
+                                                s.map(function(á, à){ 
+                                                    if(à==0){
+                                                        $(".descsript").empty().append(
+                                                            $("<a>", {class:"ptb5 plr10 fs1 fs09-xs fwb tduh", text:dữLiệu.tên(á,"ế"), href:dữLiệu.url(á,"ế")}),
+                                                            $("<a>", {class:"ptb5 plr10 fs09-xs", html:"Thời gian: "+iDate((config("bàiViết." + á)||{}).ấ, "{j}/{n}/{f}")}),
+                                                            $("<a>", {class:"ptb5 plr10 fs09-xs", text:"Địa điểm: Trường Đại học Hà Nội"}),
+                                                        ),
+                                                        $("#0").ảnh(á,"ế",true)
+                                                    }else{
+                                                        $("#"+à).empty().append(
+                                                            $("<a>", {class:"imagesk col-md-12 col-xs-12 pb32 bgpc bgsc bgrn mrla pr bấmĐc",href:dữLiệu.url(á,"ế")}).ảnh(á,"ế",true), 
+                                                            $("<a>",{class: "pa plr10 b0 bgc03 l0 tal hmn08 bấmĐc w1 fs09-xs fwb tduh", href:dữLiệu.url(á,"ế")}).append(
+                                                                $("<div>", {class:"fwb plr10 ptb5", text:dữLiệu.tên(á,"ế")}),
+                                                                $("<p>", {class:" mr5 fs09 plr10 ptb5",html:iDate((config("bàiViết." + á)||{}).ấ, "{j}/{n}/{f}")})
+                                                            )
+                                                        )
+                                                    }
+                                                })     
+                                            })
+                                        });
+                            
+                                        
+                                        //tải bài viết trong từng chuyên mục con của chuyên mục ngoại khóa
+                                        
+                                        var x = (config("chuyênLực."+ngoaikhoa)||[])
+                                        var dsAnh = {}
+
+                                        function getImages(string) { // sử dụng regex tách chuỗi html thẻ img ra khỏi html bài viết
+                                        const imgRex = /<img.*?src="(.*?)"[^>]+>/g;
+                                        const images = [];
+                                            let img;
+                                            while ((img = imgRex.exec(string))) {
+                                                images.push(img[1]);
+                                            }
+                                        return images;
+                                        }
+
+                                        x.map(function(á, à){
+                                            xửLý("đốiTượng.tải.bàiViết",{d:{thuộcTính:{p:1, ụ:[á,"~|"]}, giớiHạn:1, sắpXếp:"ấ+"}},{cache:true, onCached: true, delay:1000}, function(s){
+                                                var s = s || [];  
+                                                CẦN.db(empty(s)?ud:'bàiViết.' + s, function (i){
+                                                
+                                                    s.map(function(aa, ab){
+                                                        
+                                                    var d = (config("bàiViết."+aa)||[])
+                                                    dsAnh[aa]=getImages(d.ộ)
+                                                    
+                                                        return $("#"+á).empty().append(
+                                                            $("<div>", {class:"content col-xs-6 df aifs jcsc tal fdc", style:à%2!=0?"order:2;":'text-align:right;'}).append(
+                                                                        $("<div>",{class:"title pa5 w1",style:à%2==0?'text-align: right;':''}).append(
+                                                                            $("<a>", {class:"ptb5 plr5 fs12 fs09-xs tduh ffr fwb", href: dữLiệu.url(á,"ụ"), html: dữLiệu.tên(á,"ụ")})
+                                                                        ),
+                                                                        $("<div>", {class:"baiviet"}).append(
+                                                                            $("<a>", {class:"ptb5 plr10 fs12 fs09-xs tduh ffr fwb", href:dữLiệu.url(aa,"ế"), html: dữLiệu.tên(aa,"ế")}),
+                                                                            $("<div>", {class:"time pa5"}).append(
+                                                                                $("<a>", {class:"ptb5 plr10 fs12 fs09-xs tduh", href:dữLiệu.url(aa,"ế"), html:iDate((config("bàiViết." + aa)||{}).ấ, "{j}/{n}/{f}")})
+                                                                            ),
+                                                                            $("<div>", {class:"content pa5 tal"}).append(
+                                                                                $("<p>", {class:"ptb5 plr10 fs12 fs09-xs", text:dữLiệu.môTả(aa,"ế")})
+                                                                            ),
+                                                                            $("<div>", {class:"pa5 clr1"}).append(
+                                                                                $("<a>", {class:"ptb5 plr10 tduh fsi tduh", href:dữLiệu.url(aa,"ế"), text:"Xem thêm"})
+                                                                            )
+                                                                        )
+                                                                        
+                                                                    ),
+                                                            $("<div>", {class:"images w45 df aic jcsc pr10 col-xs-6", style:à%2!=0?"order:1":''}).append(
+                                                                $("<div>", {class:"col-md-6 h1 col-xs-12", style:à%2!=0?"order:2;":''}).append(
+                                                                    $("<div>", {class:"anh1 w1 h1 bgpc bgsc bgrn pb196", style:'background-image:url('+dsAnh[aa][0]+');'}),
+                                                                ),
+                                                                $("<div>", {class:"w50 col-md-0 ml-15 df fdc ptb5 aife",style:à%2!=0?"order:1;":'align-items: flex-start;'}).append(
+                                                                    $("<div>", {class:"anh2 col-md-8 mr25 mb15 bgpc bgsc bgrn pb21",style:(à%2==0?'margin-left: 25px;':'')+'background-image:url('+dsAnh[aa][1]+');'}),
+                                                                    $("<div>", {class:"anh3 col-md-10 bgpc bgsc bgrn pb21 z3", style: 'background-image:url('+dsAnh[aa][2]+');'})
+                                                                )
+                                                            )  
+                                                        )
+                                                })
+                                                })        
+                                            }) 
+                                    })
+                                    
+                                    //tải bài viết cuộc sống quanh ta 
+                                        xửLý("đốiTượng.tải.bàiViết", { d: { thuộcTính: { p: 1, ụ: [cuocsong, "~|"] }, giớiHạn: 5, sắpXếp: "ấ+" } }, { cache: true, onCached: true, delay: 1000 }, function (s) {
+                                        var s = s || [];
+                                            CẦN.db(empty(s)?ud:'bàiViết.'+s, function(i){
+                                                $(".csqt").empty().append(
+                                                    s.map(function(á){
+                                                        return $("<a>", {class:"col-md-6 col-xs-6 mr5 pr bgrn bgpc bgsc pb31 cf fwb"}).ảnh(á,"ế",true).append(
+                                                                $("<a>",{class:"pa b0 l0 tduh w1 ptb5 plr10 bgc05 fs09 fs07-xs", href:dữLiệu.url(á,"ế"), text: dữLiệu.tên(á,"ế")})
+                                                            )
+                                                    })
+                                                )
+                                            })
+                                    })
+                                    
+                                    //tải video trong chuyên mục con chuyên mục cuộc sống quanh ta 
+                                        xửLý("đốiTượng.tải.bàiViết", { d: { thuộcTính: { p: 1, ụ: [10876, "~|"] }, giớiHạn: 5, sắpXếp: "ấ+" } }, { cache: true, onCached: true, delay: 1000 }, function (s) {
+                                            var s = s || [];
+                                            CẦN.db(empty(s)?ud:'bàiViết.'+s, function(i){
+                                                var k = s.shift();//lấy ra bài viết đầu tiên(bài viết dạng video)
+                                                var vid = (config("bàiViết."+k))//lấy dữ liệu video
+                                                //cl(vid)
+                                                var loai = vid.ộ.toJSON()||[]//chuyển key ộ chứa src, type và id video trên ytb sang obj
+                                                var làVideo = loai.type == 'video'//ktra xem có phải là video ko 
+                                                //cl(loai)
+                                                if(làVideo){//nếu là video
+                                                    $(".vid").empty().append(
+                                                        $("<div>",{class:"col-xs-12 col-md-9 bsbb pr"}).append(
+                                                            $("<div>", { class: "w1" }).append(
+                                                                $("<div>", { class: "w1 pa b0 l0 z1 col-xs-12" }).append(
+                                                                    $("<mp4>", {class:"bgpc bgsc bgrn pr ",style:"padding-top:3%;", id: loai }),//truyền dữ liệu video vào thẻ mp4 
+                                                                    $("<a>", { href: dữLiệu.url(k, "ế"), class: "pa b0 l0 tduh w1 ptb5 plr10 bgc05 cf z3", text: dữLiệu.tên(k, "ế") })//lấy tên video
+                                                                ),
+                                                                
+                                                            )
+                                                        ).on('click',"mp4[id]",function (e){//khi click vào thẻ mp4 có id là thông tin video
+                                                            e.stopPropagation();//ngừng tương tác với những thành phần khác 
+                                                            var x = $(this),
+                                                            i = x.ID(),//lấy ra ID
+                                                            s = x.attr("src");//lấy ra src video(youtube)
+                                                            vàoURL("https://www." + (s == "youtube" || i.length == 11 ? "youtube" : "facebook") + ".com/watch/?v=" + i);//vào url với đường link đc cấu hình
+                                                            cl(i)
+                                                        })
+                                                    ).chờ(function(){
+                                                        $(this).find("mp4[id]").trigger("hiểnThị")//hiển thị video đc lưu vào thẻ mp4 
+                                                        
+                                                    },1000)
+                                                }
+                                            })
+                                        })  
+                                        
+                                    //nạp sẵn mục và bài viết trong thông báo góc học tập
+                                    xửLý("đốiTượng.tải.bàiViết", { d: { thuộcTính: { p: 1, ụ: [10823, "~|"] }, giớiHạn: 5, sắpXếp: "ấ-" } }, { cache: true, onCached: true, delay: 1000 }, function (s) {
+                                            var s = s || [];
+                                            //cl(s)
+                                            $('.thongbao:first-child').sửaLớp('active')
+                                            CẦN.db(empty(s)?ud:'bàiViết.' + s, function (i){
+                                                $(".tb").empty().append(
+                                                    s.map(function(á){
+                                                    return $("<div>", {class:"plr10 ptb5 df fdc bb1 b1sd bcd mtb5"}).append(
+                                                            $("<div>", {class:"df aic fdr"}).append(
+                                                                $("<o>", {class:"iIcon ffi fli usn bra3 mr10 fs06", text:"circle"}),
+                                                                $("<a>", {class:"plr10 ptb5 tduh", href: dữLiệu.url(á,"ế"), text:dữLiệu.tên(á,"ế")})
+                                                            ),
+                                                            $("<div>", {class:"w1 tar fs08 fwn"}).append(
+                                                                $("<p>", {class:"", html:iDate((config("bàiViết." + á)||{}).ấ, "{j}/{n}/{f}")})
+                                                            )
+                                                        )
+                                                    })     
+                                                )
+                                                $(".linktb").empty().append(
+                                                    $("<a>",{class:"ptb5 plr10 clr1 tduh",href:dữLiệu.url($('.thongbao:first-child').attr("id"),'ụ'), text:"Xem thêm"})
+                                                ) 
+                                            })        
+                                        });
+
+                                    
+                                    };
+                                    
+                                        // Cấu hình các đường dẫn trên website
+                                    $.each({
+                                            // URL xử lý dữ liệu
+                                            xửLý:"https://cdn.inevn.com/xửLý",
+                                            // Trang chủ
+                                            0:function(){
+                                                trangChủ();
+                                            },
+                                            // Xem chuyên mục
+                                            c:function(i){
+                                                $(".p").sửaLớp("-pa")
+                                                CẦN.db("chuyênMục."+i,function(s){
+                                                    var s = s || {};
+                                                    thân.empty().append(
+                                                        $("<div>",{class:"mục container "}).append(
+                                                            $('<div>', {class: 'vunbanh',}).append(
+                                                                bốCục.vụnBánh(i, {
+                                                                    ọ:"ụ",
+                                                                    ụ:10747,
+                                                                    bo:"mt25,fs12",
+                                                                })
+                                                            ),
+                                                            $("<div>",{class:"noidung col-md-12 col-xs-12 df fdr"}).append(
+                                                                $("<div>",{class:"baiviet col-md-12 df fdc jcsb pa5"}).append(
+
+                                                                ),
+                                                                
+                                                            )
+                                                        )
+                                                    )
+                                                    xửLý("đốiTượng.tải.bàiViết", { d: { thuộcTính: { p: 1, ụ: [i, "~|"] }, sắpXếp: "ấ-", giớiHạn: 20 } }, { cache: true, onCached: true, delay: 1000 }, function (s) {
+                                                        var s  = s||[]
+                                                        var phai = (config("chuyênLực."+i)||[])
+                                                        CẦN.db("bàiViết." + s, function (á) {
+                                                            if(s.length==0){
+                                                                $('.baiviet').sửaLớp("-col-md-12").sửaLớp("col-md-9").empty().append(
+                                                                    $("<div>", { class: "df tac bóng jcsc fs12 hmn2 aic"}).append(
+                                                                        $('<div>', {class: "oh ml-15 mr-15 pt10 flex"}).append(
+                                                                            $('<div>', {class: "pa15 tac wh1 fs08-xs",icon:"search_off",text:"Hiện chuyên mục này chưa có thông tin/bài viết."})
+                                                                        ),
+                                                                    )
+                                                                )
+                                                                $(".noidung").append(
+                                                                    $("<div>",{class:"col-md-3 col-xs-12 h1 fs14p pl35 h1"}).append(
+                                                                        (config("chuyênLực."+i)||[]).map(function(á,à){
+                                                                            cl(á)
+                                                                            return $("<a>",{class:"col-md-12 df c0 mtb5 b1sd bw2 bc3 bl0 bt0 br0", href:dữLiệu.url(á,"ụ")}).append(
+                                                                                $("<div>",{class:"ptb5 plr10 fs14 tudh lh12",text:dữLiệu.tên(á,"ụ").toUpperCase()})
+                                                                            )
+                                                                        }),
+                                                                    ) 
+                                                                )
+                                                            }else{
+                                                            if(s.length==1){
+                                                                    $(".baiviet").empty().append(
+                                                                        $('<div>', {class: 'fs11',}).append(
+                                                                            $("<div>", { class: "df jcsb fdr fww", id: "bàiViết" }).data("bàiViết", s).append(
+                                                                                $('<div>', {class: 'col-md-8 col-xs-12 fs1', id: "nộiDung",html: á.ộ}),
+                                                                                $("<div>", { class: "col-md-3 col-xs-12" }).append(
+                                                                                    (config('chuyênLực.'+i)||s).map(function (item, index) {
+                                                                                        return $("<div>", { class: "df fdc" }).append(
+                                                                                            $("<div>", { class: "fs12 ptb10 b1sd bw2 bc3 bl0 bt0 br0" }).append(
+                                                                                                $("<a>", { href:phai.length==0? dữLiệu.url(item, "ế"): dữLiệu.url(item, "ụ") }).cắtDòng(2,phai.length==0?dữLiệu.tên(item, "ế"):dữLiệu.tên(item, "ụ"))
+                                                                                            )
+                                                                                        )
+                                                                                    }),
+                                                                                )
+                                                                            )
+                                                                        )
+                                                                    ).each(function(){
+                                                                        $(this).find("#bàiViết").trigger("hiểnThị");
+                                                                    })
+                                                                }else{
+                                                                    $('.baiviet',).empty().append(
+                                                                        $("<div>", { class: "df jcsb fdr fww" }).append(
+                                                                            $("<div>", { class: "df fdc col-md-8 col-xs-12" }).append(
+                                                                                s.map(function (item, index) {
+                                                                                    var d = config("bàiViết." + item) || {};
+                                                                                    // cl("d ? dữ liệu của bài viết lấy để hiện thì thời gian ", d)
+                                                                                    return $('<div>', {
+                                                                                        class: 'fs11 df fdr mb30 h200 pr15',
+                                                                                    }).append(
+                                                                                        $("<div>", { class: "col-md-3 bgrn bgsc bgpc pb51" }).ảnh(item, "ế", true),
+                                                                                        $('<div>', {class: 'col-md-9 pl15'}).append(
+                                                                                            $('<a>', { class: 'fwb tduh mb15 shineh',href: dữLiệu.url(item, "ế"),html: dữLiệu.tên(item, "ế")}),
+                                                                                            $("<div>", { class: "mt10" }).append(
+                                                                                                $('<div>', {}).append(
+                                                                                                    $('<div>', {class: 'fs1 pr25',html: dữLiệu.môTả(item, "ế")})
+                                                                                                )
+                                                                                            ),
+                                                                                            $("<div>", { class: "df aic fr pt20" }).append(
+                                                                                                $("<span>", { class: "ml5",icon:"timer"+"::"+"O", html: iDate(d.ấ, "{j}/{n}/{f}") })
+                                                                                            )
+                                                                                        ),
+                                                                                    )
+                                                                                })
+                                                                            ),
+                                                                            $("<div>", { class: "col-md-3 col-xs-0" }).append(
+                                                                                $('<div>', {class: 'df fdc jcsb lsn pa0-xs'}).append(
+                                                                                    (config('chuyênLực.'+i)||s).map(function (item, index) {
+                                                                                        return $("<div>", { class: "df fdc" }).append(
+                                                                                            $("<div>", { class: "fs11 ptb10 b1sd bw2 bc3 bl0 bt0 br0" }).append(
+                                                                                                $("<a>", { href:phai.length==0? dữLiệu.url(item, "ế"): dữLiệu.url(item, "ụ") }).cắtDòng(2,phai.length==0?dữLiệu.tên(item, "ế"):dữLiệu.tên(item, "ụ"))
+                                                                                            )
+                                                                                        )
+                                                                                    }),
+                                                                                )
+                                                                            )
+                                                                        )
+                                                                    )
+                                                                }
+                                                            }
+                                                        }) 
+                                                    })
+                                                })
+                                            },
+                                                
+                                            // Xem bài viết
+                                            a:function(i){
+                                                $(".p").sửaLớp("-pa")
+                                                CẦN.db("bàiViết."+i,function(s){
+                                                    var s = s || {};
+                                                    thân.empty().append(
+                                                        $("<div>",{class:"mục container "}).append(
+                                                            $('<div>', {class: 'vunbanh',}).append(
+                                                                bốCục.vụnBánh(i, {
+                                                                    ọ:"ế",
+                                                                    ụ:10747,
+                                                                    bo:"mt25,fs12",
+                                                                })
+                                                            ),
+                                                            $("<div>",{class:"noidung col-md-12 col-xs-12 df fdr"}).append(
+                                                                $("<div>",{class:"baiviet col-md-9 col-xs-12 df fdc pa5"}).append(
+                                                                    $('<h1>', {class: 'fwb fs16 lh15', html: s.ê }),
+                                                                    $('<div>', {class: 'ptb10 bsdo bw1 br0 bl0 bt0 mb25 df aic'}).append(
+                                                                        $('<div>', {class: 'fs1 bấmĐc',icon:"print", html:"In bài viết"}),
+                                                                        $('<div>', {class: 'fs1 pl15 bấmĐc',icon:"cached", html:"Làm mới"}),
+                                                                    ),
+                                                                    $("<div>", { class: "ptb10 bsdo bw1 br0 bl0 bt0", id: "bàiViết" }).data("bàiViết", i).append(
+                                                                        $('<div>', { class:"col-xs-12 col-md-10 fs11 fni mlra pt15 plr25 pb35 ",id: 'nộiDung', html:s.ộ})
+                                                                    ),
+                                                                ),  
+                                                                
+                                                            )
+                                                        )
+                                                    ).each(function () {
+                                                        if ($(this).find("#bàiViết")) {
+                                                            $("#bàiViết").trigger("hiểnThị")
+                                                            cl("lấy được #bàiViết ")
+                                                        } else {
+                                                            cl("chưa lấy được #bàiViết ")
+                                                        }
+                                                    });
+                                                })
+                                            },
+
+                                            // Các đường link không được cấu hình
+                                            404:function(){
+                                                vàoURL("/")
+                                            }
+                                        },function(á,à){
+                                            config("url."+á,à);
+                                        });
+
+                                        // Vào ngay đường dẫn hiện tại
+                                        vàoURL();
+                                    
+                                        //menu dính
+                                        $(document).scroll(function(){
+                                            if ($("html, body").scrollTop() < 50) {
+                                                $(".navbar").sửaLớp("-sticky");
+                                            } else {
+                                                $(".navbar").sửaLớp("sticky");
+                                            }
+                                        })
+                                        
+                                        //tải thông báo mục đầu tiên sau khi nạp trang web                                
+                                        
+                                        
+
+                                        var q = (config("chuyênLực."+thongbao)||[])
+                                        var idtb = {}
+                                        //lấy dữ liệu ra và lưu vào mảng idtb
+                                        chờ(function(){
+                                            q.map(function(á){
+                                                xửLý("đốiTượng.tải.bàiViết", { d: { thuộcTính: { p: 1, ụ: [á, "~|"] }, giớiHạn: 5, sắpXếp: "ấ-" } }, { cache: true, onCached: true, delay: 1000 }, function (s) {
+                                                    var s = s || [];
+                                                
+                                                    CẦN.db(empty(s)?ud:'bàiViết.' + s, function (i){
+                                                        var links = []
+                                                        s.map(function(aa){var obj = {urls:dữLiệu.url(aa,"ụ"),têns:dữLiệu.tên(aa,"ế"), times:iDate((config("bàiViết." + aa)||{}).ấ, "{j}/{n}/{f}") }
+                                                            links.push(obj)
+                                                        })
+                                                        idtb[á]= links 
+                                                    })
+                                                    
+                                                }); 
+                                            })   
+                                        },1000)
+                                        //cl(idtb)
+                                        //sử dụng dữ liệu trong mảng idtb và render 
+                                        $(document).on('click', '.thongbao',function (e){
+                                            $(this).sửaLớp('active').siblings().sửaLớp('-active')
+                                            cl($(this).attr('id'))
+                                            var v = $(this).attr('id')
+                                            //cl(typeof(v))
+                                            //cl(idtb[v])
+                                            $(".tb").empty().append(
+                                                idtb[v].map(function(aa){
+                                                    return $("<div>", {class:"plr10 ptb5 df fdc bb1 b1sd bcd mtb5"}).append(
+                                                        $("<div>", {class:"df aic fdr"}).append(
+                                                            $("<o>", {class:"iIcon ffi fli usn bra3 mr10 fs06", text:"circle"}),
+                                                            $("<a>", {class:"plr10 ptb5 tduh", href: aa.urls, text:aa.têns})
+                                                        ),
+                                                        $("<div>", {class:"w1 tar fs08 fwn"}).append(
+                                                            $("<p>", {class:"", html:aa.times})
+                                                        )
+                                                    )   
+                                                })  
+                                            ),
+                                            $(".linktb").empty().append(
+                                                $("<a>",{class:"ptb5 plr10 clr1 tduh",href:dữLiệu.url(v,'ụ'), text:"Xem thêm"})
+                                            )           
+                                        })    
+                                    })
+                                })
+                            }
+                        });
+                    });
+    </script>
+</head>
+<body class="oxh styleScroll">
+    <div class="wrap fs14p ls1 lh15 pr ffa"></div>
+    
+</body>
+</html>
